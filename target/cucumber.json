@@ -3,7 +3,7 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2021-03-26T03:31:21.678Z",
+        "start_timestamp": "2021-03-26T12:19:38.482Z",
         "line": 11,
         "name": "",
         "description": "",
@@ -13,7 +13,7 @@
         "steps": [
           {
             "result": {
-              "duration": 3047000000,
+              "duration": 1682000000,
               "status": "passed"
             },
             "line": 12,
@@ -31,7 +31,7 @@
           },
           {
             "result": {
-              "duration": 140000000,
+              "duration": 38000000,
               "status": "passed"
             },
             "line": 13,
