@@ -26,7 +26,7 @@ Scenario: add a photo to the product pepesi zero
 	
 Scenario: diplay the photo we just added to pepsi zero
 	Given I want to display the photo for pepsi zero
-	Then I should get a 200 success Status code
+	Then I should get a 201 success Status code
 	
 Scenario: delete our added product pepsi zero
 	Given I want to delete the product pepsi zero

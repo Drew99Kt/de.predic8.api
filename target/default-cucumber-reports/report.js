@@ -75,4 +75,124 @@ formatter.match({
 formatter.result({
   "status": "passed"
 });
+formatter.scenario({
+  "name": "list all the information about the product pepsi zero",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@Functional"
+    }
+  ]
+});
+formatter.step({
+  "name": "I want to get the list of the product pepsi zero i just created",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "step_definitions.AddNewProduct.i_want_to_get_the_list_of_the_product_pepsi_zero_i_just_created()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I should get a 200 success Status code",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "step_definitions.AddNewProduct.i_should_get_a_success_Status_code(int)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "add a photo to the product pepesi zero",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@Functional"
+    }
+  ]
+});
+formatter.step({
+  "name": "I want add a photo for the product pepsi zero",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "step_definitions.AddNewProduct.i_want_add_a_photo_for_the_product_pepsi_zero()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I should get a 201 success Status code",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "step_definitions.AddNewProduct.i_should_get_a_success_Status_code(int)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "diplay the photo we just added to pepsi zero",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@Functional"
+    }
+  ]
+});
+formatter.step({
+  "name": "I want to display the photo for pepsi zero",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "step_definitions.AddNewProduct.i_want_to_display_the_photo_for_pepsi_zero()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I should get a 201 success Status code",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "step_definitions.AddNewProduct.i_should_get_a_success_Status_code(int)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "delete our added product pepsi zero",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@Functional"
+    }
+  ]
+});
+formatter.step({
+  "name": "I want to delete the product pepsi zero",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "step_definitions.AddNewProduct.i_want_to_delete_the_product_pepsi_zero()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I should get a 200 success Status Code",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "step_definitions.AddNewProduct.i_should_get_a_success_Status_Code(int)"
+});
+formatter.result({
+  "status": "passed"
+});
 });

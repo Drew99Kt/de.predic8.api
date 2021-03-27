@@ -17,12 +17,11 @@ import io.cucumber.junit.CucumberOptions;
 		features = "src/test/resources", 
 		glue = "step_definitions",
 		dryRun = false,
-		tags = "@Test1"
-		
+		tags = "@Functional"
 
 )
 
 
-public class CukesRunner {
+public class TestRuner {
 
 }
