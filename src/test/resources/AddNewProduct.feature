@@ -11,10 +11,10 @@ Feature: Verify new product can be added and deleted
 Scenario: add new product with valid information
 	Given I post a new product called "Pepsi" for an exsisting vendor
 	Then I should get a 201 success Status code
-	
-Scenario: update pepsi to pepsi and change price
+@Test1	
+Scenario: update pepsi to pepsiZero and change price
 	Given I do a put to update the name to "Pepsi zero" and price to 1.50 of the product
-	Then I should get a 201 success Status code
+	Then I should get a 200 success Status code
 	
 Scenario: list all the information about the product pepsi zero
 	Given I want to get the list of the product pepsi zero i just created
