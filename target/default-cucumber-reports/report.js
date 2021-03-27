@@ -156,7 +156,7 @@ formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "I should get a 201 success Status code",
+  "name": "I should get a 200 success Status code",
   "keyword": "Then "
 });
 formatter.match({

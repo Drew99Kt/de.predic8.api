@@ -1,26 +1,24 @@
 package step_definitions;
 
 import java.io.File;
-import java.io.InputStream;
+
 
 import org.json.simple.JSONObject;
 import org.junit.Assert;
 
-import com.github.javafaker.Faker;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.RestAssured;
-import io.restassured.http.Method;
+
 import io.restassured.response.Response;
-import io.restassured.response.ResponseBody;
+
 import io.restassured.specification.RequestSpecification;
 
 public class AddNewProduct {
 
 	private static Response response;
 	private static RequestSpecification request;
-	
 
 	public static int pepsiProductid;
 
@@ -31,11 +29,11 @@ public class AddNewProduct {
 		RestAssured.baseURI = "https://api.predic8.de/shop";
 		request = RestAssured.given();
 		JSONObject requestParams = new JSONObject();
+
 		
-		Faker faker= new Faker();
-		System.out.println(faker.beer().name());
-		// this is the json body we are sending, we could use java faker for these better testing using random values
 	
+		// this is the json body we are sending, we could use java faker for these
+		// better testing using random values
 		requestParams.put("name", pepsi); // Cast
 		requestParams.put("price", 2);
 		requestParams.put("category_url", "/shop/categories/Drinks");
@@ -45,32 +43,24 @@ public class AddNewProduct {
 
 		// here we do a post api comand to products to add the above json body
 		response = request.post("/products/");
+
 		
-	
-		
-		String x = response.getBody().asString();
 
 		// getting product_url then converting the data type to integer. (this will be
 		// used for a later test)
+		String x = response.getBody().asString();
 		int getIndexOfPepsiProductUrl = x.indexOf("product_url") + 19;
-	    String 	pepsiProductUrl = x.substring(getIndexOfPepsiProductUrl, x.length() - 1);
+		String pepsiProductUrl = x.substring(getIndexOfPepsiProductUrl, x.length() - 1);
 		pepsiProductUrl = pepsiProductUrl.replaceAll("[^0-9]", "");
 		pepsiProductid = Integer.parseInt(pepsiProductUrl);
-		System.out.println("new product id "+pepsiProductid);
+		System.out.println("new product id " + pepsiProductid);
 	}
 
-	@SuppressWarnings("rawtypes")
 	@Then("I should get a {int} success Status code")
 	public void i_should_get_a_success_Status_code(int expectedStatusCode) {
 
-		
-
-
-		
 		int actualStatusCode = response.getStatusCode();
 		Assert.assertEquals(expectedStatusCode, actualStatusCode);
-		
-		
 
 	}
 
@@ -91,53 +81,48 @@ public class AddNewProduct {
 		request.body(requestParams.toJSONString());
 
 		response = request.patch("/products/" + pepsiProductid);
-		
-		
-	
+
 	}
 
 	@Given("I want to get the list of the product pepsi zero i just created")
 	public void i_want_to_get_the_list_of_the_product_pepsi_zero_i_just_created() {
-		
-		
-		
-		
-		
+
 		RestAssured.baseURI = "https://api.predic8.de/shop";
 		request = RestAssured.given();
 		request.header("Content-Type", "application/json");
 		response = request.get("/products/" + pepsiProductid);
-		
+
 		System.out.println(response.getBody().print());
-		
+
 	}
 
 	@Given("I want add a photo for the product pepsi zero")
 	public void i_want_add_a_photo_for_the_product_pepsi_zero() {
 		File file = new File("pepsiZero.jpg");
-	RestAssured.baseURI = "https://api.predic8.de/shop";
+		RestAssured.baseURI = "https://api.predic8.de/shop";
 		request = RestAssured.given();
-		//request.header("multipart/form-data", "boundary<calculated when request is sent>");
+		// request.header("multipart/form-data", "boundary<calculated when request is
+		// sent>");
 		request.multiPart("file", file, "multipat/form-data");
-		response = request.put("/products/"+pepsiProductid+"/photo");
-		
-		
-		System.out.println(response.getBody().prettyPeek());
-		
-		
+		response = request.put("/products/" + pepsiProductid + "/photo");
+
+	
+
 	}
 
 	@Given("I want to display the photo for pepsi zero")
 	public void i_want_to_display_the_photo_for_pepsi_zero() {
-		
-		/*Couldn't find a way to display picture. 
-		 * you could open selenium and display image on a browser
-		 *  though if you wanted to.
-		 *  doing a get request will see if the picture exsist though. 
+
+		/*
+		 * Couldn't find a way to display picture. you could open selenium and display
+		 * image on a browser though if you wanted to. doing a get request will see if
+		 * the picture exist though. and return 200 response
 		 */
-		
-		
-		
+		RestAssured.baseURI = "https://api.predic8.de/shop";
+		request = RestAssured.given();
+		request.header("Content-Type", "application/json");
+		response = request.get("/products/" + pepsiProductid + "/photo");
+
 	}
 
 	@Given("I want to delete the product pepsi zero")
@@ -145,16 +130,15 @@ public class AddNewProduct {
 		RestAssured.baseURI = "https://api.predic8.de/shop";
 		request = RestAssured.given();
 		request.header("Content-Type", "application/json");
-		response = request.delete("/products/"+pepsiProductid);
-		
+		response = request.delete("/products/" + pepsiProductid);
+
 		System.out.println(response.getBody().prettyPrint());
-		
+
 	}
 
 	@Then("I should get a {int} success Status Code")
 	public void i_should_get_a_success_Status_Code(int expectedStatusCode) {
-	
-		
+
 		int actualStatusCode = response.getStatusCode();
 
 		Assert.assertEquals(expectedStatusCode, actualStatusCode);

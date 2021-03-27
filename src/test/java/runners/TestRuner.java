@@ -7,20 +7,14 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
+
+		plugin = { "pretty", "html:target/default-cucumber-reports", "json:target/cucumber.json" },
+
+		features = "src/test/resources", glue = "step_definitions",
 		
-		plugin = {
-				"pretty", 
-				"html:target/default-cucumber-reports",
-				"json:target/cucumber.json"
-		}, 
-		
-		features = "src/test/resources", 
-		glue = "step_definitions",
-		dryRun = false,
-		tags = "@Functional"
+		dryRun = false, tags = "@Functional"
 
 )
-
 
 public class TestRuner {
 
