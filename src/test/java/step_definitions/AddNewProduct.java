@@ -2,10 +2,8 @@ package step_definitions;
 
 import java.io.File;
 
-
 import org.json.simple.JSONObject;
 import org.junit.Assert;
-
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -19,7 +17,6 @@ public class AddNewProduct {
 
 	private static Response response;
 	private static RequestSpecification request;
-
 	public static int pepsiProductid;
 
 	@SuppressWarnings("unchecked")
@@ -30,8 +27,6 @@ public class AddNewProduct {
 		request = RestAssured.given();
 		JSONObject requestParams = new JSONObject();
 
-		
-	
 		// this is the json body we are sending, we could use java faker for these
 		// better testing using random values
 		requestParams.put("name", pepsi); // Cast
@@ -43,8 +38,6 @@ public class AddNewProduct {
 
 		// here we do a post api comand to products to add the above json body
 		response = request.post("/products/");
-
-		
 
 		// getting product_url then converting the data type to integer. (this will be
 		// used for a later test)
@@ -58,7 +51,7 @@ public class AddNewProduct {
 
 	@Then("I should get a {int} success Status code")
 	public void i_should_get_a_success_Status_code(int expectedStatusCode) {
-
+		// checking if the status code is correct from the feature file
 		int actualStatusCode = response.getStatusCode();
 		Assert.assertEquals(expectedStatusCode, actualStatusCode);
 
@@ -71,10 +64,9 @@ public class AddNewProduct {
 		RestAssured.baseURI = "https://api.predic8.de/shop";
 		request = RestAssured.given();
 
-		JSONObject requestParams = new JSONObject();
-
 		// this is the json body we are using to do a update/put to the product we just
 		// created.
+		JSONObject requestParams = new JSONObject();
 		requestParams.put("name", pepsiZero); // Cast
 		requestParams.put("price", price);
 		request.header("Content-Type", "application/json");
@@ -87,6 +79,7 @@ public class AddNewProduct {
 	@Given("I want to get the list of the product pepsi zero i just created")
 	public void i_want_to_get_the_list_of_the_product_pepsi_zero_i_just_created() {
 
+		// printing out information about our product.
 		RestAssured.baseURI = "https://api.predic8.de/shop";
 		request = RestAssured.given();
 		request.header("Content-Type", "application/json");
@@ -98,13 +91,12 @@ public class AddNewProduct {
 
 	@Given("I want add a photo for the product pepsi zero")
 	public void i_want_add_a_photo_for_the_product_pepsi_zero() {
+		// getting file from out project folder then uploading it
 		File file = new File("pepsiZero.jpg");
 		RestAssured.baseURI = "https://api.predic8.de/shop";
 		request = RestAssured.given();
 		request.multiPart("file", file, "multipat/form-data");
 		response = request.put("/products/" + pepsiProductid + "/photo");
-
-	
 
 	}
 
@@ -116,6 +108,7 @@ public class AddNewProduct {
 		 * image on a browser though if you wanted to. doing a get request will see if
 		 * the picture exist though. and return 200 response
 		 */
+
 		RestAssured.baseURI = "https://api.predic8.de/shop";
 		request = RestAssured.given();
 		request.header("Content-Type", "application/json");
@@ -125,20 +118,19 @@ public class AddNewProduct {
 
 	@Given("I want to delete the product pepsi zero")
 	public void i_want_to_delete_the_product_pepsi_zero() {
-//		RestAssured.baseURI = "https://api.predic8.de/shop";
-//		request = RestAssured.given();
-//		request.header("Content-Type", "application/json");
-//		response = request.delete("/products/" + pepsiProductid);
-//
-//		System.out.println(response.getBody().prettyPrint());
+
+		RestAssured.baseURI = "https://api.predic8.de/shop";
+		request = RestAssured.given();
+		request.header("Content-Type", "application/json");
+		response = request.delete("/products/" + pepsiProductid);
+		System.out.println(response.getBody().prettyPrint());
 
 	}
 
 	@Then("I should get a {int} success Status Code")
 	public void i_should_get_a_success_Status_Code(int expectedStatusCode) {
-
+		// Checking to see if we get the correct response for our request
 		int actualStatusCode = response.getStatusCode();
-
 		Assert.assertEquals(expectedStatusCode, actualStatusCode);
 	}
 

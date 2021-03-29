@@ -1,12 +1,6 @@
-@Functional 
+@Test 
 Feature: Verify new product can be added and deleted 
 
-
-#write a scenario for creating an account on automation practice
-#Given = pre-condition
-#When = steps/actions to take 
-#Then = expected result / what you're verifying 
-#And = defined based on whatever Given, When, Then you put it after 
 @Test1 
 Scenario: add new product with valid information 
 	Given I post a new product called "Pepsi" for an exsisting vendor 

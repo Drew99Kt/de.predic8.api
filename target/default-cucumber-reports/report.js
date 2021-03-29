@@ -5,7 +5,7 @@ formatter.feature({
   "keyword": "Feature",
   "tags": [
     {
-      "name": "@Functional"
+      "name": "@Test"
     }
   ]
 });
@@ -15,7 +15,7 @@ formatter.scenario({
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@Functional"
+      "name": "@Test"
     },
     {
       "name": "@Test1"
@@ -48,7 +48,7 @@ formatter.scenario({
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@Functional"
+      "name": "@Test"
     },
     {
       "name": "@Test1"
@@ -81,7 +81,7 @@ formatter.scenario({
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@Functional"
+      "name": "@Test"
     }
   ]
 });
@@ -111,7 +111,7 @@ formatter.scenario({
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@Functional"
+      "name": "@Test"
     }
   ]
 });
@@ -141,7 +141,7 @@ formatter.scenario({
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@Functional"
+      "name": "@Test"
     }
   ]
 });
@@ -171,7 +171,7 @@ formatter.scenario({
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@Functional"
+      "name": "@Test"
     }
   ]
 });

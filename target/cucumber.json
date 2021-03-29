@@ -3,7 +3,7 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2021-03-27T16:39:21.630Z",
+        "start_timestamp": "2021-03-29T17:05:05.389Z",
         "line": 11,
         "name": "add new product with valid information",
         "description": "",
@@ -13,7 +13,7 @@
         "steps": [
           {
             "result": {
-              "duration": 2757000000,
+              "duration": 1535000000,
               "status": "passed"
             },
             "line": 12,
@@ -31,7 +31,7 @@
           },
           {
             "result": {
-              "duration": 16000000,
+              "duration": 2000000,
               "status": "passed"
             },
             "line": 13,
@@ -50,7 +50,7 @@
         ],
         "tags": [
           {
-            "name": "@Functional"
+            "name": "@Test"
           },
           {
             "name": "@Test1"
@@ -58,7 +58,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-03-27T16:39:24.547Z",
+        "start_timestamp": "2021-03-29T17:05:06.986Z",
         "line": 15,
         "name": "update pepsi to pepsiZero and change price",
         "description": "",
@@ -68,7 +68,7 @@
         "steps": [
           {
             "result": {
-              "duration": 663000000,
+              "duration": 586000000,
               "status": "passed"
             },
             "line": 16,
@@ -90,7 +90,7 @@
           },
           {
             "result": {
-              "duration": 2000000,
+              "duration": 1000000,
               "status": "passed"
             },
             "line": 17,
@@ -109,7 +109,7 @@
         ],
         "tags": [
           {
-            "name": "@Functional"
+            "name": "@Test"
           },
           {
             "name": "@Test1"
@@ -117,7 +117,7 @@
         ]
       },
       {
-        "start_timestamp": "2021-03-27T16:39:25.225Z",
+        "start_timestamp": "2021-03-29T17:05:07.575Z",
         "line": 19,
         "name": "list all the information about the product pepsi zero",
         "description": "",
@@ -127,7 +127,7 @@
         "steps": [
           {
             "result": {
-              "duration": 892000000,
+              "duration": 634000000,
               "status": "passed"
             },
             "line": 20,
@@ -139,7 +139,6 @@
           },
           {
             "result": {
-              "duration": 2000000,
               "status": "passed"
             },
             "line": 21,
@@ -158,12 +157,12 @@
         ],
         "tags": [
           {
-            "name": "@Functional"
+            "name": "@Test"
           }
         ]
       },
       {
-        "start_timestamp": "2021-03-27T16:39:26.131Z",
+        "start_timestamp": "2021-03-29T17:05:08.214Z",
         "line": 23,
         "name": "add a photo to the product pepesi zero",
         "description": "",
@@ -173,7 +172,7 @@
         "steps": [
           {
             "result": {
-              "duration": 758000000,
+              "duration": 693000000,
               "status": "passed"
             },
             "line": 24,
@@ -185,7 +184,6 @@
           },
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "line": 25,
@@ -204,12 +202,12 @@
         ],
         "tags": [
           {
-            "name": "@Functional"
+            "name": "@Test"
           }
         ]
       },
       {
-        "start_timestamp": "2021-03-27T16:39:26.904Z",
+        "start_timestamp": "2021-03-29T17:05:08.910Z",
         "line": 27,
         "name": "diplay the photo we just added to pepsi zero",
         "description": "",
@@ -219,7 +217,7 @@
         "steps": [
           {
             "result": {
-              "duration": 614000000,
+              "duration": 579000000,
               "status": "passed"
             },
             "line": 28,
@@ -249,12 +247,12 @@
         ],
         "tags": [
           {
-            "name": "@Functional"
+            "name": "@Test"
           }
         ]
       },
       {
-        "start_timestamp": "2021-03-27T16:39:27.529Z",
+        "start_timestamp": "2021-03-29T17:05:09.492Z",
         "line": 31,
         "name": "delete our added product pepsi zero",
         "description": "",
@@ -264,7 +262,7 @@
         "steps": [
           {
             "result": {
-              "duration": 2000000,
+              "duration": 573000000,
               "status": "passed"
             },
             "line": 32,
@@ -276,7 +274,6 @@
           },
           {
             "result": {
-              "duration": 1000000,
               "status": "passed"
             },
             "line": 33,
@@ -295,7 +292,7 @@
         ],
         "tags": [
           {
-            "name": "@Functional"
+            "name": "@Test"
           }
         ]
       }
@@ -307,7 +304,7 @@
     "uri": "file:src/test/resources/AddNewProduct.feature",
     "tags": [
       {
-        "name": "@Functional",
+        "name": "@Test",
         "type": "Tag",
         "location": {
           "line": 1,
