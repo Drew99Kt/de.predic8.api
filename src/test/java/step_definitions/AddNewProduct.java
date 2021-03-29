@@ -92,7 +92,7 @@ public class AddNewProduct {
 		request.header("Content-Type", "application/json");
 		response = request.get("/products/" + pepsiProductid);
 
-		System.out.println(response.getBody().print());
+		System.out.println(response.getBody().prettyPeek());
 
 	}
 
@@ -101,8 +101,6 @@ public class AddNewProduct {
 		File file = new File("pepsiZero.jpg");
 		RestAssured.baseURI = "https://api.predic8.de/shop";
 		request = RestAssured.given();
-		// request.header("multipart/form-data", "boundary<calculated when request is
-		// sent>");
 		request.multiPart("file", file, "multipat/form-data");
 		response = request.put("/products/" + pepsiProductid + "/photo");
 
@@ -127,12 +125,12 @@ public class AddNewProduct {
 
 	@Given("I want to delete the product pepsi zero")
 	public void i_want_to_delete_the_product_pepsi_zero() {
-		RestAssured.baseURI = "https://api.predic8.de/shop";
-		request = RestAssured.given();
-		request.header("Content-Type", "application/json");
-		response = request.delete("/products/" + pepsiProductid);
-
-		System.out.println(response.getBody().prettyPrint());
+//		RestAssured.baseURI = "https://api.predic8.de/shop";
+//		request = RestAssured.given();
+//		request.header("Content-Type", "application/json");
+//		response = request.delete("/products/" + pepsiProductid);
+//
+//		System.out.println(response.getBody().prettyPrint());
 
 	}
 
