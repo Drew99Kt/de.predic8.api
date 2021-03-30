@@ -1,6 +1,6 @@
 $(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/AddNewProduct.feature");
 formatter.feature({
-  "name": "Verify new product can be added and deleted",
+  "name": "Verify new product can be added, updated and deleted",
   "description": "",
   "keyword": "Feature",
   "tags": [
@@ -22,12 +22,15 @@ formatter.scenario({
     }
   ]
 });
+formatter.before({
+  "status": "passed"
+});
 formatter.step({
   "name": "I post a new product called \"Pepsi\" for an exsisting vendor",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "step_definitions.AddNewProduct.i_post_a_new_product_called_for_an_exsisting_vendor(java.lang.String)"
+  "location": "de.step_definitions.AddNewProduct.i_post_a_new_product_called_for_an_exsisting_vendor(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
@@ -37,9 +40,12 @@ formatter.step({
   "keyword": "Then "
 });
 formatter.match({
-  "location": "step_definitions.AddNewProduct.i_should_get_a_success_Status_code(int)"
+  "location": "de.step_definitions.AddNewProduct.i_should_get_a_success_Status_code(int)"
 });
 formatter.result({
+  "status": "passed"
+});
+formatter.after({
   "status": "passed"
 });
 formatter.scenario({
@@ -55,12 +61,15 @@ formatter.scenario({
     }
   ]
 });
+formatter.before({
+  "status": "passed"
+});
 formatter.step({
   "name": "I do a put to update the name to \"Pepsi zero\" and price to 1.50 of the product",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "step_definitions.AddNewProduct.i_do_a_put_to_update_the_name_to_and_price_to_of_the_product(java.lang.String,double)"
+  "location": "de.step_definitions.AddNewProduct.i_do_a_put_to_update_the_name_to_and_price_to_of_the_product(java.lang.String,double)"
 });
 formatter.result({
   "status": "passed"
@@ -70,9 +79,12 @@ formatter.step({
   "keyword": "Then "
 });
 formatter.match({
-  "location": "step_definitions.AddNewProduct.i_should_get_a_success_Status_code(int)"
+  "location": "de.step_definitions.AddNewProduct.i_should_get_a_success_Status_code(int)"
 });
 formatter.result({
+  "status": "passed"
+});
+formatter.after({
   "status": "passed"
 });
 formatter.scenario({
@@ -85,12 +97,15 @@ formatter.scenario({
     }
   ]
 });
+formatter.before({
+  "status": "passed"
+});
 formatter.step({
   "name": "I want to get the list of the product pepsi zero i just created",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "step_definitions.AddNewProduct.i_want_to_get_the_list_of_the_product_pepsi_zero_i_just_created()"
+  "location": "de.step_definitions.AddNewProduct.i_want_to_get_the_list_of_the_product_pepsi_zero_i_just_created()"
 });
 formatter.result({
   "status": "passed"
@@ -100,9 +115,12 @@ formatter.step({
   "keyword": "Then "
 });
 formatter.match({
-  "location": "step_definitions.AddNewProduct.i_should_get_a_success_Status_code(int)"
+  "location": "de.step_definitions.AddNewProduct.i_should_get_a_success_Status_code(int)"
 });
 formatter.result({
+  "status": "passed"
+});
+formatter.after({
   "status": "passed"
 });
 formatter.scenario({
@@ -115,12 +133,15 @@ formatter.scenario({
     }
   ]
 });
+formatter.before({
+  "status": "passed"
+});
 formatter.step({
   "name": "I want add a photo for the product pepsi zero",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "step_definitions.AddNewProduct.i_want_add_a_photo_for_the_product_pepsi_zero()"
+  "location": "de.step_definitions.AddNewProduct.i_want_add_a_photo_for_the_product_pepsi_zero()"
 });
 formatter.result({
   "status": "passed"
@@ -130,9 +151,12 @@ formatter.step({
   "keyword": "Then "
 });
 formatter.match({
-  "location": "step_definitions.AddNewProduct.i_should_get_a_success_Status_code(int)"
+  "location": "de.step_definitions.AddNewProduct.i_should_get_a_success_Status_code(int)"
 });
 formatter.result({
+  "status": "passed"
+});
+formatter.after({
   "status": "passed"
 });
 formatter.scenario({
@@ -145,12 +169,15 @@ formatter.scenario({
     }
   ]
 });
+formatter.before({
+  "status": "passed"
+});
 formatter.step({
   "name": "I want to display the photo for pepsi zero",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "step_definitions.AddNewProduct.i_want_to_display_the_photo_for_pepsi_zero()"
+  "location": "de.step_definitions.AddNewProduct.i_want_to_display_the_photo_for_pepsi_zero()"
 });
 formatter.result({
   "status": "passed"
@@ -160,9 +187,12 @@ formatter.step({
   "keyword": "Then "
 });
 formatter.match({
-  "location": "step_definitions.AddNewProduct.i_should_get_a_success_Status_code(int)"
+  "location": "de.step_definitions.AddNewProduct.i_should_get_a_success_Status_code(int)"
 });
 formatter.result({
+  "status": "passed"
+});
+formatter.after({
   "status": "passed"
 });
 formatter.scenario({
@@ -175,12 +205,15 @@ formatter.scenario({
     }
   ]
 });
+formatter.before({
+  "status": "passed"
+});
 formatter.step({
   "name": "I want to delete the product pepsi zero",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "step_definitions.AddNewProduct.i_want_to_delete_the_product_pepsi_zero()"
+  "location": "de.step_definitions.AddNewProduct.i_want_to_delete_the_product_pepsi_zero()"
 });
 formatter.result({
   "status": "passed"
@@ -190,9 +223,12 @@ formatter.step({
   "keyword": "Then "
 });
 formatter.match({
-  "location": "step_definitions.AddNewProduct.i_should_get_a_success_Status_Code(int)"
+  "location": "de.step_definitions.AddNewProduct.i_should_get_a_success_Status_Code(int)"
 });
 formatter.result({
+  "status": "passed"
+});
+formatter.after({
   "status": "passed"
 });
 });

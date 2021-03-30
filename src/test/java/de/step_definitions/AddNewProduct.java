@@ -1,10 +1,11 @@
-package step_definitions;
+package de.step_definitions;
 
 import java.io.File;
 
 import org.json.simple.JSONObject;
 import org.junit.Assert;
 
+import de.utilities.CommonMethods;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.RestAssured;
@@ -18,13 +19,16 @@ public class AddNewProduct {
 	private static Response response;
 	private static RequestSpecification request;
 	public static int pepsiProductid;
+	CommonMethods com = new CommonMethods();
 
 	@SuppressWarnings("unchecked")
 	@Given("I post a new product called {string} for an exsisting vendor")
 	public void i_post_a_new_product_called_for_an_exsisting_vendor(String pepsi) {
-
+//
 		RestAssured.baseURI = "https://api.predic8.de/shop";
+
 		request = RestAssured.given();
+
 		JSONObject requestParams = new JSONObject();
 
 		// this is the json body we are sending, we could use java faker for these
@@ -39,14 +43,12 @@ public class AddNewProduct {
 		// here we do a post api comand to products to add the above json body
 		response = request.post("/products/");
 
-		// getting product_url then converting the data type to integer. (this will be
+		// getting product_url then converting the data type to int. (this will be
 		// used for a later test)
 		String x = response.getBody().asString();
-		int getIndexOfPepsiProductUrl = x.indexOf("product_url") + 19;
-		String pepsiProductUrl = x.substring(getIndexOfPepsiProductUrl, x.length() - 1);
-		pepsiProductUrl = pepsiProductUrl.replaceAll("[^0-9]", "");
-		pepsiProductid = Integer.parseInt(pepsiProductUrl);
-		System.out.println("new product id " + pepsiProductid);
+
+		pepsiProductid = com.getProductId(x);
+
 	}
 
 	@Then("I should get a {int} success Status code")
@@ -105,8 +107,8 @@ public class AddNewProduct {
 
 		/*
 		 * Couldn't find a way to display picture. you could open selenium and display
-		 * image on a browser though if you wanted to. doing a get request will see if
-		 * the picture exist though. and return 200 response
+		 * image on a browser if you wanted to. doing a get request will see if
+		 * the picture exist, and return 200 response
 		 */
 
 		RestAssured.baseURI = "https://api.predic8.de/shop";

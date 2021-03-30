@@ -1,5 +1,5 @@
 @Test 
-Feature: Verify new product can be added and deleted 
+Feature: Verify new product can be added, updated and deleted 
 
 @Test1 
 Scenario: add new product with valid information 
