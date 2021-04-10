@@ -31,12 +31,14 @@ public class AddNewProduct {
 
 		JSONObject requestParams = new JSONObject();
 
+		int vendorId=com.getValidVendorId();
+		
 		// this is the json body we are sending, we could use java faker for these
 		// better testing using random values
 		requestParams.put("name", pepsi); // Cast
 		requestParams.put("price", 2);
 		requestParams.put("category_url", "/shop/categories/Drinks");
-		requestParams.put("vendor_url", "/shop/vendors/812");
+		requestParams.put("vendor_url", "/shop/vendors/"+vendorId);
 		request.header("Content-Type", "application/json");
 		request.body(requestParams.toJSONString());
 
@@ -46,7 +48,7 @@ public class AddNewProduct {
 		// getting product_url then converting the data type to int. (this will be
 		// used for a later test)
 		String x = response.getBody().asString();
-
+		System.out.println(x);
 		pepsiProductid = com.getProductId(x);
 
 	}
